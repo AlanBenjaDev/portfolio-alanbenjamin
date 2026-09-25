@@ -1,4 +1,3 @@
-# portfolio-alanbenjamin
 # 🚀 Portfolio Personal — Full Stack Developer
 
 Un portfolio web moderno, rápido y responsive construido con el ecosistema de **Next.js**, **Tailwind CSS**, **Framer Motion**, **Magic UI** y **Shadcn UI**. Diseñado para presentar mis proyectos como desarrollador Full Stack, destacar mi experiencia y facilitar el contacto directo.
