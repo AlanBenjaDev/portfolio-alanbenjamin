@@ -1,4 +1,4 @@
-// components/contact.tsx
+// components/Footer.tsx
 "use client";
 
 import { motion } from "framer-motion";
@@ -25,7 +25,7 @@ const LinkedinIcon = ({ className = "w-4 h-4" }: { className?: string }) => (
 
 export const Footer = () => {
   return (
-    <footer className="py-20 px-6 max-w-4xl mx-auto text-center flex flex-col items-center">
+    <footer id="contact" className="py-20 px-6 max-w-4xl mx-auto text-center flex flex-col items-center">
       {/* Tarjeta de Contacto en Modo Oscuro */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -48,7 +48,7 @@ export const Footer = () => {
         </h2>
 
         <p className="text-zinc-400 text-sm md:text-base max-w-md mx-auto leading-relaxed mb-6">
-          ¿Querés charlar sobre un proyecto o tenés alguna consulta? Mandame un mensaje a mi correo o conectemos por redes sociales.
+          ¿Buscás desarrollar una solución IoT, arquitectura Backend o un proyecto Full Stack? Hablemos de cómo llevarlo a la práctica.
         </p>
 
         <a
@@ -81,7 +81,7 @@ export const Footer = () => {
       </motion.div>
 
       <p className="text-xs text-zinc-600 mt-8 font-mono">
-        © {new Date().getFullYear()} Alan. Todos los derechos reservados.
+        © {new Date().getFullYear()} Alan • Full Stack Developer & Técnico en Electrónica (IoT & Backend).
       </p>
     </footer>
   );

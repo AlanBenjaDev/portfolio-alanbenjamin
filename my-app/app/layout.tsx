@@ -8,8 +8,8 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata = {
-  title: 'Alan - Full Stack Developer Portfolio',
-  description: 'Portfolio profesional de Alan, Full Stack Developer de 18 años. Especializado en Next.js, React, Node.js y desarrollo web moderno.',
+  title: 'Alan - Full Stack Developer & Técnico en Electrónica | IoT & Backend',
+  description: 'Portfolio profesional de Alan: Técnico en Electrónica y Full Stack Developer, especializado en programación IoT y desarrollo Backend.',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

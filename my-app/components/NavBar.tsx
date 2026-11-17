@@ -3,7 +3,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button"; // Componente Shadcn UI
+import { Button } from "@/components/ui/button";
 
 export const Navbar = () => {
   return (
@@ -22,14 +22,17 @@ export const Navbar = () => {
         </div>
 
         <div className="hidden md:flex items-center gap-6 text-sm text-zinc-400">
-          <Link href="#about" className="hover:text-white transition-colors">About</Link>
-          <Link href="#projects" className="hover:text-white transition-colors">Projects</Link>
-          <Link href="#experience" className="hover:text-white transition-colors">Experience</Link>
+          <Link href="#about" className="hover:text-white transition-colors">Sobre mí</Link>
+          <Link href="#specialties" className="hover:text-white transition-colors">Especialidades</Link>
+          <Link href="#projects" className="hover:text-white transition-colors">Proyectos</Link>
+          <Link href="#contact" className="hover:text-white transition-colors">Contacto</Link>
         </div>
 
-        <Button size="sm" className="rounded-full bg-zinc-100 text-zinc-900 hover:bg-zinc-200 font-medium">
-          Download CV
-        </Button>
+        <a href="#contact">
+          <Button size="sm" className="rounded-full bg-zinc-100 text-zinc-900 hover:bg-zinc-200 font-medium">
+            Contactar
+          </Button>
+        </a>
       </motion.nav>
     </header>
   );

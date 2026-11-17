@@ -26,10 +26,19 @@ const GithubIcon = ({ className = "w-4 h-4" }: { className?: string }) => (
 export const Projects = () => {
   return (
     <section id="projects" className="py-16 px-6 max-w-6xl mx-auto">
-      <h2 className="text-3xl font-bold text-white mb-2">Estuve construyendo bastantes proyectos</h2>
-      <p className="text-zinc-400 mb-10">Una selección de mis proyectos más recientes como Desarrollador Full Stack.</p>
+      <div className="mb-10">
+        <Badge className="bg-zinc-800 text-zinc-300 border-zinc-700 px-3 py-1 text-xs mb-3">
+          Portafolio
+        </Badge>
+        <h2 className="text-3xl md:text-4xl font-bold text-white mb-2 tracking-tight">
+          Proyectos Destacados
+        </h2>
+        <p className="text-zinc-400 max-w-2xl text-sm md:text-base">
+          Una selección de mis proyectos que integran desarrollo Backend de alta eficiencia, soluciones IoT con sensores y aplicaciones Full Stack.
+        </p>
+      </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
         {PROJECTS.map((project, index) => (
           <ProjectCard key={project.id} project={project} index={index} />
         ))}
@@ -46,26 +55,32 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
     >
-      <Card className="bg-[#18181b] border-zinc-800 text-white overflow-hidden hover:border-zinc-700 transition-all group h-full flex flex-col justify-between">
+      <Card className="bg-[#18181b] border-zinc-800 text-white overflow-hidden hover:border-zinc-700 transition-all group h-full flex flex-col justify-between shadow-xl">
         <div>
           {/* Contenedor de la Imagen desde Cloudinary */}
-          <div className="relative h-48 w-full overflow-hidden bg-zinc-900">
+          <div className="relative h-56 w-full overflow-hidden bg-zinc-900">
             <img 
               src={project.image} 
               alt={project.title} 
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
             />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#18181b] via-transparent to-transparent opacity-80" />
           </div>
 
           <CardHeader className="pb-2">
-            <CardTitle className="text-xl font-semibold text-zinc-100">{project.title}</CardTitle>
+            {project.category && (
+              <Badge variant="outline" className="w-fit mb-2 text-xs border-sky-500/30 text-sky-400 bg-sky-500/10">
+                {project.category}
+              </Badge>
+            )}
+            <CardTitle className="text-xl font-bold text-zinc-100">{project.title}</CardTitle>
           </CardHeader>
 
           <CardContent>
-            <p className="text-zinc-400 text-sm mb-4 line-clamp-3">{project.description}</p>
+            <p className="text-zinc-400 text-sm mb-5 line-clamp-3 leading-relaxed">{project.description}</p>
             <div className="flex flex-wrap gap-1.5 mb-2">
               {project.technologies.map((tech) => (
-                <Badge key={tech} variant="secondary" className="bg-zinc-800 text-zinc-300 text-xs hover:bg-zinc-700">
+                <Badge key={tech} variant="secondary" className="bg-zinc-800/80 text-zinc-300 text-xs hover:bg-zinc-700 border border-zinc-700/50">
                   {tech}
                 </Badge>
               ))}
