@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 import { PROJECTS, Project } from "@/data/projects";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ExternalLink } from "lucide-react";
 
 // Componente SVG nativo para evitar el error de importación con lucide-react
 const GithubIcon = ({ className = "w-4 h-4" }: { className?: string }) => (
@@ -88,7 +87,7 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
           </CardContent>
         </div>
 
-        <CardFooter className="flex items-center justify-between border-t border-zinc-800/80 pt-4 mt-auto">
+        <CardFooter className="flex items-center border-t border-zinc-800/80 pt-4 mt-auto">
           <a
             href={project.githubUrl}
             target="_blank"
@@ -96,20 +95,8 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
             className="flex items-center gap-2 text-xs text-zinc-400 hover:text-white transition-colors"
           >
             <GithubIcon className="w-4 h-4" />
-            <span>Ver Código</span>
+            <span>Ver Repositorio</span>
           </a>
-
-          {project.demoUrl && (
-            <a
-              href={project.demoUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-1.5 text-xs text-sky-400 hover:text-sky-300 font-medium transition-colors"
-            >
-              <span>Ver Demo</span>
-              <ExternalLink className="w-3.5 h-3.5" />
-            </a>
-          )}
         </CardFooter>
       </Card>
     </motion.div>
